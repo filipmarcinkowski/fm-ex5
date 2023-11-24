@@ -12,7 +12,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: hsl(0, 6%, 24%);
+  color: hsl(0, 36%, 70%);
 
   height: 100vh;
 
@@ -22,7 +22,10 @@ body {
 }
 
 .section {
-  height: 60%;
+  max-width: 144rem;
+  /* height: fit-content; */
+  /* background-color: red; */
+  box-shadow: 0.3rem 0.3rem 0.4rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -33,24 +36,98 @@ body {
 /* ***************************** */
 /* CONTAINER 1 */
 /* ***************************** */
+
+.desc-box::before {
+  content: "";
+
+  background-image: url(./images/logo.svg);
+  background-size: cover;
+  display: block;
+  height: 3.3rem;
+  width: 15.8rem;
+  position: absolute;
+  top: 2rem;
+  left: 12rem;
+}
+
 .desc-box {
-  width: 30rem;
-  height: 30rem;
-  background-color: aquamarine;
-  padding: 4rem;
+  width: 50rem;
+  height: 50rem;
+  /* background-color: aquamarine; */
+  padding: 12rem;
+  padding-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
 }
 
 h3 {
   font-size: 4rem;
   font-weight: 300;
   text-transform: uppercase;
-  background-color: green;
+  line-height: 1.1;
+  letter-spacing: 1rem;
 }
 
 strong {
   font-weight: 600;
   color: #000;
-  background-color: blue;
+}
+
+h3,
+p,
+.cta-form {
+  margin-bottom: 3rem;
+}
+
+.cta-form {
+  width: 100%;
+  /* background-color: red; */
+  position: relative;
+  display: block;
+  height: 4rem;
+}
+
+.cta-email__input {
+  width: 100%;
+  height: 4rem;
+  border-radius: 40rem;
+  border: none;
+  border: 0.1rem solid hsl(0, 36%, 70%);
+}
+
+.btn {
+  position: absolute;
+  /* position: relative; */
+  top: 0;
+  right: 0;
+  display: block;
+  width: 7rem;
+  height: 100%;
+  border-radius: 40rem;
+  border: none;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  overflow: hidden;
+  box-shadow: 0rem 0.6rem 1.6rem 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::after {
+  content: "";
+  display: block;
+  background-image: url(./images/icon-arrow.svg);
+  background-size: cover;
+  height: 2rem;
+  width: 1.2rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: scale(1); */
+  /* background-color: red; */
 }
 
 /* ***************************** */
@@ -66,5 +143,5 @@ strong {
   background-image: url(./images/hero-desktop.jpg);
   background-size: cover;
   height: 100%;
-  width: 20rem;
+  width: 38rem;
 }
