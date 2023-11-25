@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 300;
   color: hsl(0, 36%, 70%);
 
@@ -46,12 +46,12 @@ body {
 
 .desc-box::before {
   content: "";
-
+  display: block;
   background-image: url(./images/logo.svg);
   background-size: cover;
-  display: block;
   height: 3.3rem;
   width: 15.8rem;
+
   position: absolute;
   top: 2rem;
   left: 12rem;
@@ -60,15 +60,17 @@ body {
 .desc-box {
   width: 50rem;
   height: 50rem;
+  padding: 12rem;
+  padding-top: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   background-image: url(./images/bg-pattern-desktop.svg),
     linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)),
     linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   background-size: cover;
-  padding: 12rem;
-  padding-top: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   position: relative;
 }
@@ -107,11 +109,18 @@ p,
   border: none;
   border: 0.1rem solid hsl(0, 36%, 70%);
   text-indent: 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.btn:focus,
+.cta-email__input:focus {
+  outline: none;
+  border: 0.1rem solid hsl(0, 93%, 68%);
 }
 
 .btn {
   position: absolute;
-  /* position: relative; */
   top: 0;
   right: 0;
   display: block;
@@ -120,25 +129,28 @@ p,
   border-radius: 40rem;
   border: none;
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  transition: background-image 1s;
+  cursor: pointer;
 
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0rem 0.6rem 1.6rem 0.3rem rgba(0, 0, 0, 0.1);
 }
 
+.btn:hover {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+}
 .btn::after {
   content: "";
   display: block;
   background-image: url(./images/icon-arrow.svg);
   background-size: cover;
-  height: 2rem;
-  width: 1.2rem;
+  height: 1.7rem;
+  width: 1rem;
 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* transform: scale(1); */
-  /* background-color: red; */
 }
 
 /* ***************************** */
@@ -155,4 +167,30 @@ p,
   background-size: cover;
   height: 100%;
   width: 38rem;
+}
+
+/* ///////////////////////////// */
+/* if wrong email */
+/* ///////////////////////////// */
+.btn::before {
+  content: "";
+  display: block;
+  background-image: url(./images/icon-error.svg);
+  background-size: cover;
+
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  transform: translate(-50%, -50%);
+
+  height: 2rem;
+  width: 2rem;
+}
+
+.cta-form::after {
+  content: "Please provide a valid email";
+  color: hsl(0, 93%, 68%);
+  display: inline-block;
+  margin-left: 2rem;
+  margin-top: 0.8rem;
 }
