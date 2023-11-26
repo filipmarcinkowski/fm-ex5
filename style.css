@@ -39,6 +39,7 @@ body {
   display: grid;
   grid-template-columns: 1fr fit-content;
   grid-template-rows: 1fr;
+  /* max-width: 144rem; */
 }
 /* ***************************** */
 /* CONTAINER 1 */
@@ -48,9 +49,12 @@ body {
   content: "";
   display: block;
   background-image: url(./images/logo.svg);
-  background-size: cover;
-  height: 3.3rem;
-  width: 15.8rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* height: 3.3rem;
+  width: 15.8rem; */
+  height: 2rem;
+  width: 100%;
 
   position: absolute;
   top: 2rem;
@@ -58,8 +62,10 @@ body {
 }
 
 .desc-box {
-  width: 50rem;
-  height: 50rem;
+  /* width: 50rem;
+  height: 50rem; */
+  max-height: 100%;
+  width: auto;
   padding: 12rem;
   padding-top: 20rem;
 
@@ -163,10 +169,13 @@ p,
 }
 .image {
   display: block;
+  max-width: 100%;
+  height: auto;
+  /* display: block;
   background-image: url(./images/hero-desktop.jpg);
   background-size: cover;
   height: 100%;
-  width: 38rem;
+  width: 38rem; */
 }
 
 /* ///////////////////////////// */
